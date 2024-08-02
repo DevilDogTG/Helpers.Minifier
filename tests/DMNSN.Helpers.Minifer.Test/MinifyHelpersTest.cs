@@ -12,7 +12,7 @@ namespace DMNSN.Helpers.Minifer.Test
             string expected = "<html><head><title>Test HTML</title></head><body><h1>Hello, World!</h1></body></html>";
 
             // Act
-            string result = MinifyHelper.HTMLMinify(html);
+            string result = MinifyHelper.HtmlMinify(html);
 
             // Assert
             Assert.Equal(expected, result);
@@ -54,7 +54,7 @@ namespace DMNSN.Helpers.Minifer.Test
             string expected = "<root><element1>Value 1</element1><element2>Value 2</element2></root>";
 
             // Act
-            string result = MinifyHelper.XMLMinify(xml);
+            string result = MinifyHelper.XmlMinify(xml);
 
             // Assert
             Assert.Equal(expected, result);
