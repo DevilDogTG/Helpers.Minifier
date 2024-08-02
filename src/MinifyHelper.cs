@@ -19,13 +19,10 @@ namespace DMNSN.Helpers.Minifier
         {
             // Remove whitespace between HTML tags
             html = HtmlWhiteSpaceRegex().Replace(html, "><");
-
             // Remove HTML comments
             html = HtmlCommentRegex().Replace(html, "");
-
             // Remove whitespace at the beginning and end of each line
             html = HtmlMultiLineRegex().Replace(html, "");
-
             // Remove line breaks and tabs
             html = html.Replace("\r", "").Replace("\n", "").Replace("\t", "");
 
@@ -41,18 +38,12 @@ namespace DMNSN.Helpers.Minifier
                     Indented = false,
                     Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
                 };
-                using (var document = JsonDocument.Parse(json))
-                {
-                    using (var stream = new MemoryStream())
-                    {
-                        using (var writer = new Utf8JsonWriter(stream, options))
-                        {
-                            document.WriteTo(writer);
-                            writer.Flush();
-                            return Encoding.UTF8.GetString(stream.ToArray());
-                        }
-                    }
-                }
+                using var document = JsonDocument.Parse(json);
+                using var stream = new MemoryStream();
+                using var writer = new Utf8JsonWriter(stream, options);
+                document.WriteTo(writer);
+                writer.Flush();
+                return Encoding.UTF8.GetString(stream.ToArray());
             }
             catch { return json; }
         }
