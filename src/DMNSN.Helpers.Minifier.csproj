@@ -13,7 +13,7 @@
 		<PackageTags>dmnsn</PackageTags>
 		<Product>DMNSN Minifier tool</Product>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
-		<Version>8.0.1</Version>
+		<Version>8.0.2</Version>
 		<RepositoryUrl>https://github.com/DevilDogTG/Helpers.Minifier</RepositoryUrl>
 	</PropertyGroup>
 
