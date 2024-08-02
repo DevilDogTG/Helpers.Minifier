@@ -1,6 +1,6 @@
 $workspace = "$PSScriptRoot\.."
 $projectName = "DMNSN.Helpers.Minifier"
-$project = "$workspace\src\$projectName\$projectName.csproj"
+$project = "$workspace\src\$projectName.csproj"
 $solution = "$workspace\DMNSN.Helpers.Minifier.sln"
 $releaseNotes = "Initial release. Starting base version with version of dotnet"
 $tagPrefix = ""
