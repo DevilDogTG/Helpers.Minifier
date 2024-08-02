@@ -3,18 +3,18 @@
     /// <summary>
     /// Config object for the XML minifier.
     /// </summary>
-    public class XMLMinifierSetting
+    public class XmlMinifierSetting
     {
         public bool RemoveEmptyLines { get; set; }
         public bool RemoveWhitespaceBetweenElements { get; set; }
         public bool CloseEmptyTags { get; set; }
         public bool RemoveComments { get; set; }
 
-        public static XMLMinifierSetting Aggressive
+        public static XmlMinifierSetting Aggressive
         {
             get
             {
-                return new XMLMinifierSetting
+                return new XmlMinifierSetting
                 {
                     RemoveEmptyLines = true,
                     RemoveWhitespaceBetweenElements = true,
@@ -24,11 +24,11 @@
             }
         }
 
-        public static XMLMinifierSetting NoMinification
+        public static XmlMinifierSetting NoMinification
         {
             get
             {
-                return new XMLMinifierSetting
+                return new XmlMinifierSetting
                 {
                     RemoveEmptyLines = false,
                     RemoveWhitespaceBetweenElements = false,

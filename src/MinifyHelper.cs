@@ -15,7 +15,7 @@ namespace DMNSN.Helpers.Minifier
         [GeneratedRegex(@"^\s+|\s+$", RegexOptions.Multiline)]
         private static partial Regex HtmlMultiLineRegex();
 
-        public static string HTMLMinify(string html)
+        public static string HtmlMinify(string html)
         {
             // Remove whitespace between HTML tags
             html = HtmlWhiteSpaceRegex().Replace(html, "><");
@@ -51,10 +51,10 @@ namespace DMNSN.Helpers.Minifier
         public static string TextMinify(string text)
         { return text.Replace("\r", "").Replace("\n", "").Replace("\t", "").Trim(); }
 
-        public static string XMLMinify(string xml)
-        { return XMLMinify(xml, XMLMinifierSetting.Aggressive); }
+        public static string XmlMinify(string xml)
+        { return XmlMinify(xml, XmlMinifierSetting.Aggressive); }
 
-        public static string XMLMinify(string xml, XMLMinifierSetting settings)
+        public static string XmlMinify(string xml, XmlMinifierSetting settings)
         {
             var originalXmlDocument = new XmlDocument
             {
